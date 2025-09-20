@@ -1,0 +1,17 @@
+{
+  "name": "Adhithyan Ajith - Data Scientist & ML Engineer",
+  "short_name": "Adhithyan Ajith",
+  "description": "Portfolio showcasing expertise in AI, Machine Learning, and Development",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
