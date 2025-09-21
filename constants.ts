@@ -41,22 +41,13 @@ export const PROJECTS_DATA: Project[] = [
 
 export const PUBLICATIONS_DATA: Publication[] = [
     {
-        title: "A machine learning approach for early detection of dementia",
-        authors: ["Adhithyan Ajith", "John Doe", "Jane Smith"],
-        journal: "Journal of Artificial Intelligence in Medicine",
+        title: "Research Proposal: Advancing Random Forests for High-Dimensional Imbalanced Data in Biomedical Applications",
+        authors: ["Adhithyan Ajith"],
+        journal: "Medium",
         year: 2023,
-        abstract: "This study proposes a novel machine learning model utilizing biomarkers and cognitive test results for the early diagnosis of dementia, achieving state-of-the-art accuracy.",
-        doi: "10.1016/j.artmed.2023.102485",
-        link: "https://doi.org/10.1016/j.artmed.2023.102485"
-    },
-    {
-        title: "Fine-tuning Large Language Models for Domain-Specific Question Answering",
-        authors: ["Adhithyan Ajith", "Sam Wilson"],
-        journal: "Proceedings of the Annual Conference on Neural Information Processing Systems (NeurIPS)",
-        year: 2024,
-        abstract: "We investigate various parameter-efficient fine-tuning (PEFT) techniques to adapt large language models for specialized domains, such as legal and medical question answering, showing significant improvements over general models.",
-        doi: "10.48550/arXiv.2405.12345",
-        link: "https://doi.org/10.48550/arXiv.2405.12345"
+        abstract: "Explores challenges of high-dimensional, imbalanced data in biomedical research, proposing an enhanced Random Forest approach for improved performance and interpretability.",
+        doi: "medium-2023-randomforests",
+        link: "https://medium.com/@personal.adhithyan/research-proposal-advancing-random-forests-for-high-dimensional-imbalanced-data-in-biomedical-5a1cb92632aa"
     }
 ];
 

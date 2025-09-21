@@ -55,25 +55,41 @@ const Publications: React.FC = () => {
             <motion.div 
               key={pub.doi}
               variants={itemVariants}
-              className="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50 transition-all duration-300 hover:border-blue-500/50 hover:shadow-blue-500/10 transform hover:-translate-y-1"
+              className={`p-6 rounded-xl border transition-all duration-300 transform hover:-translate-y-1 ${
+                pub.link === '#' 
+                  ? 'bg-gray-900/30 border-gray-600/30 opacity-70' 
+                  : 'bg-gray-900/50 border-gray-700/50 hover:border-blue-500/50 hover:shadow-blue-500/10'
+              }`}
             >
-              <h3 className="text-xl font-bold text-white mb-2">{pub.title}</h3>
+              <h3 className={`text-xl font-bold mb-2 ${
+                pub.link === '#' ? 'text-gray-400' : 'text-white'
+              }`}>
+                {pub.title}
+              </h3>
               <p className="text-sm text-gray-400 mb-1">
                 {pub.authors.map((author, i) => (
                     <span key={i} className={author === "Adhithyan Ajith" ? "font-bold text-blue-300" : ""}>{author}{i < pub.authors.length - 1 ? ', ' : ''}</span>
                 ))}
               </p>
               <p className="text-sm text-gray-500 mb-4">{pub.journal}, {pub.year}</p>
-              <p className="text-gray-300 mb-4">{pub.abstract}</p>
-              <a 
-                href={pub.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold text-sm transition-colors"
-                data-interactive
-              >
-                Read Publication <Link size={16} className="ml-2"/>
-              </a>
+              <p className={`mb-4 ${pub.link === '#' ? 'text-gray-400' : 'text-gray-300'}`}>
+                {pub.abstract}
+              </p>
+              {pub.link === '#' ? (
+                <span className="inline-flex items-center text-gray-500 font-semibold text-sm">
+                  Publication Coming Soon
+                </span>
+              ) : (
+                <a 
+                  href={pub.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold text-sm transition-colors"
+                  data-interactive
+                >
+                  Read Publication <Link size={16} className="ml-2"/>
+                </a>
+              )}
             </motion.div>
           ))}
         </motion.div>
