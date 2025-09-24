@@ -4,7 +4,7 @@ import type { ChatMessage } from '../types';
 import { SKILLS_DATA, PROJECTS_DATA, PUBLICATIONS_DATA } from '../constants';
 
 // FIX: Safely access process.env to prevent crashes in environments where it's not defined.
-const API_KEY = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : undefined;
+const API_KEY = (typeof process !== 'undefined' && process.env) ? process.env.VITE_GEMINI_API_KEY : undefined;
 
 // A single flag to know if the API is configured.
 const isApiConfigured = !!API_KEY;
