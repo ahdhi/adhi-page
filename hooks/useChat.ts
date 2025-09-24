@@ -3,8 +3,15 @@ import { GoogleGenAI } from '@google/genai';
 import type { ChatMessage } from '../types';
 import { SKILLS_DATA, PROJECTS_DATA, PUBLICATIONS_DATA } from '../constants';
 
-// FIX: Safely access process.env to prevent crashes in environments where it's not defined.
-const API_KEY = (typeof process !== 'undefined' && process.env) ? process.env.VITE_GEMINI_API_KEY : undefined;
+// Get API key from Vite environment variables
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+// Debug logging
+console.log('Environment check:', {
+  apiKey: API_KEY ? 'Found' : 'Missing',
+  apiKeyLength: API_KEY ? API_KEY.length : 0,
+  allViteVars: Object.keys(import.meta.env).filter(k => k.startsWith('VITE_'))
+});
 
 // A single flag to know if the API is configured.
 const isApiConfigured = !!API_KEY;
@@ -17,7 +24,8 @@ export const useChat = () => {
   // Initialize AI only if API key is present.
   const ai = useMemo(() => {
     if (!isApiConfigured) {
-      console.error("API_KEY environment variable not set. Chatbot will be disabled.");
+      console.error("VITE_GEMINI_API_KEY environment variable not set. Chatbot will be disabled.");
+      console.debug("Available env vars:", Object.keys(process.env || {}).filter(k => k.startsWith('VITE_')));
       return null;
     }
     try {
