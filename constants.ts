@@ -29,7 +29,7 @@ export const SKILLS_DATA: SkillCategory[] = [
 ];
 
 export const PROJECTS_DATA: Project[] = [
-    { title: 'AI-Powered Medical Diagnosis', description: 'Achieved 97% accuracy in diagnosing medical conditions using PyTorch, BERT, and Transformers.', tags: ['PyTorch', 'BERT', 'Transformers'] },
+    { title: 'AI-Powered Medical Diagnosis', description: 'Achieved 97% accuracy in diagnosing medical conditions using PyTorch, BERT, and Transformers.', tags: ['PyTorch', 'BERT', 'Transformers'], link: 'https://clara-ai.netlify.app/' },
     { title: 'YouSay-WeSay Election Platform', description: 'A globally recognized platform featured by LSE, built with React and Node.js.', tags: ['React', 'Node.js', 'JavaScript'], link: 'https://yousay-wesay.deakin.edu.au/' },
     { title: 'Multi-Modal AI Assistant', description: 'An intelligent assistant combining LLaMA, Whisper, and Stable Diffusion for comprehensive interaction.', tags: ['LLaMA', 'Whisper', 'Stable Diffusion'] },
     { title: 'Sports Analytics Dashboard', description: 'An interactive dashboard for sports analytics developed using R, Shiny, and statistical analysis.', tags: ['R', 'Shiny', 'Statistics'] },
